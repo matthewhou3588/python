@@ -27,8 +27,11 @@ for r in range(1, 3):
         
 for c in range(3, data.max_column+1):
     for r in range(3, data.max_row+1):
-#         data.cell(r,c).value * weight.cell(0,c)
-        result.cell(row=r, column=c, value=data.cell(r,c).value * weight.cell(1,c).value)
+        #result.cell(row=r, column=c, value=data.cell(r,c).value * weight.cell(1,c).value)
+        if data.cell(r,c).value == None:
+            result.cell(row=r, column=c, value=0)
+        else:
+            result.cell(row=r, column=c, value=data.cell(r,c).value * weight.cell(1,c).value)
         
         
         
